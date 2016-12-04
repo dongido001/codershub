@@ -1,0 +1,62 @@
+
+<div class="header container-fluid" style="padding: 9px;">
+   <div class="row">
+     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+         <a href="<?php echo $SCHEME.'://'.$HOST.':'.$PORT.$BASE.'/'; ?>"> <button type="button" class="btn btn-secondary">CodersHub</button> </a>
+     </div>
+
+     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12" style="direction: rtl;">
+         <a href="/submit"><button type="button" class="btn btn-secondary">Submit Your code...</button> </a>
+     </div>
+   </div>
+
+</div><br /><br />
+ <div class="well" style="text-align: center; margin-left: auto; margin-right: auto; width: 60%;"> 
+  <?php
+    if( $success == true): ?>
+    <div class="alert alert-success">
+      <strong>Success!</strong>  <?=   $message?>
+    </div>
+   <?php elseif(isset($message)):?>
+    <div class="alert alert-danger">
+      <strong>error :)</strong>   <?=   $message?>
+    </div>
+ <?php endif;  ?>
+ </div>
+<div class="container flex-items-md-middle" style="width: 80%; magin: opx auto; min-height: 250px; vertical-align: middle;padding: 1px;">
+    <div class="jumbotron center" style="padding: 9px;"> 
+            Upload your Files... Only zip allowed.
+    </div>     
+<div class="container">
+    <form method="POST" action="/test" name="sumit" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="  Full Name" name="name" required>
+  </div>
+
+   <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" required>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleTextarea">Comment ...</label>
+    <textarea class="form-control" id="exampleTextarea" rows="3" name="comment"> </textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file"  class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="solution" required>
+    <small id="fileHelp" class="form-text text-muted" > upload your solution. zip format only...</small>
+  </div>
+  <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+
+</form>
+</div>
+</div>
+
+<div class="footer center">
+	<p>Roughly coded by <a href="http://www.github.com/dongido001/"> Dongido <3 </a></p>
+	<p class="stats"><code> CodersHub &copy 2016. Proudly sponsored by <a href="http://www.menusms.com/">menusms.com</a></code></p>
+</div>
